@@ -1,0 +1,232 @@
+.soqa-sobre {
+    position: relative;
+    padding: 160px 120px;
+    background: linear-gradient(135deg, #e4e4e4, #d7d7d7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* iluminação suave */
+.soqa-sobre::before {
+    content: "";
+    position: absolute;
+    top: -250px;
+    left: -250px;
+    width: 700px;
+    height: 700px;
+    background: radial-gradient(circle,
+            rgba(27, 53, 88, 0.08),
+            transparent 70%);
+    pointer-events: none;
+}
+
+/* container */
+.soqa-sobre-container {
+    position: relative;
+    max-width: 1100px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.55);
+    backdrop-filter: blur(20px);
+    padding: 90px;
+    border-radius: 28px;
+    box-shadow: 0 60px 90px rgba(0, 0, 0, 0.25);
+    transition: all 0.4s ease;
+}
+
+.soqa-sobre-container:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 70px 120px rgba(0, 0, 0, 0.35);
+}
+
+/* título */
+.soqa-section-heading {
+    position: relative;
+    font-size: 46px;
+    font-weight: 900;
+    margin-bottom: 50px;
+    color: #0f1c2e;
+    letter-spacing: -1px;
+}
+
+.soqa-section-heading::after {
+    content: "";
+    position: absolute;
+    bottom: -18px;
+    left: 0;
+    width: 90px;
+    height: 5px;
+    background: linear-gradient(90deg, #ff3c3c, #ff6a00);
+    border-radius: 3px;
+    transition: width 0.4s ease;
+}
+
+.soqa-sobre-container:hover .soqa-section-heading::after {
+    width: 180px;
+}
+
+/* texto */
+.soqa-section-paragraph {
+    font-size: 21px;
+    line-height: 1.9;
+    color: #4a5a6a;
+    margin-bottom: 60px;
+    transition: color 0.3s ease;
+}
+
+.soqa-sobre-container:hover .soqa-section-paragraph {
+    color: #1e2a38;
+}
+
+/* área das imagens */
+.soqa-sobre-container img {
+    width: 70%;
+    border: 1px solid rgba(9, 9, 37, 0.445);
+    height: 180px;
+    object-fit: cover;
+    border-radius: 18px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+    transition: all 0.5s ease;
+}
+
+/* wrapper das imagens */
+.soqa-imagens {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+/* hover nas imagens */
+.soqa-sobre-container img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 35px 80px rgba(0, 0, 0, 0.35);
+}
+
+/* ========================================
+   NOTEBOOK
+======================================== */
+
+@media (max-width: 1200px) {
+
+    .soqa-sobre {
+        padding: 120px 60px;
+    }
+
+    .soqa-sobre-container {
+        padding: 70px;
+    }
+
+    .soqa-section-heading {
+        font-size: 38px;
+    }
+
+    .soqa-section-paragraph {
+        font-size: 19px;
+    }
+
+}
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 1024px) {
+
+    .soqa-sobre {
+        padding: 100px 40px;
+    }
+
+    .soqa-sobre-container {
+        padding: 60px 40px;
+        border-radius: 22px;
+    }
+
+    .soqa-section-heading {
+        font-size: 32px;
+    }
+
+    .soqa-section-paragraph {
+        font-size: 17px;
+        line-height: 1.7;
+    }
+
+    .soqa-imagens {
+        gap: 25px;
+    }
+
+    .soqa-sobre-container img {
+        width: 100%;
+        height: 160px;
+    }
+
+}
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 768px) {
+
+    .soqa-sobre {
+        padding: 80px 20px;
+    }
+
+    .soqa-sobre-container {
+        padding: 40px 25px;
+        border-radius: 18px;
+        box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
+        transform: none !important;
+    }
+
+    .soqa-section-heading {
+        font-size: 26px;
+        margin-bottom: 30px;
+    }
+
+    .soqa-section-heading::after {
+        height: 3px;
+        width: 70px;
+    }
+
+    .soqa-section-paragraph {
+        font-size: 15px;
+        margin-bottom: 40px;
+    }
+
+    .soqa-imagens {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .soqa-sobre-container img {
+        width: 100%;
+        height: 200px;
+        border-radius: 14px;
+    }
+
+}
+
+/* ========================================
+   MOBILE PEQUENO
+======================================== */
+
+@media (max-width: 480px) {
+
+    .soqa-sobre {
+        padding: 60px 15px;
+    }
+
+    .soqa-section-heading {
+        font-size: 22px;
+    }
+
+    .soqa-section-paragraph {
+        font-size: 14px;
+    }
+
+    .soqa-sobre-container img {
+        height: 170px;
+    }
+
+}

@@ -1,0 +1,185 @@
+/* ============================= */
+/* HEADER BASE */
+/* ============================= */
+
+.painel-header-container {
+    position: sticky;
+    top: 0;
+    z-index: 999;
+
+    width: 100%;
+    height: 40px;
+    padding: 20px 60px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: linear-gradient(135deg, #0b1220 0%, #111c2e 50%, #0f172a 100%);
+    backdrop-filter: blur(14px);
+
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+
+    transition: all 0.4s ease;
+}
+
+/* linha inferior elegante */
+.painel-header-container::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background: linear-gradient(90deg, #3b82f6, #06b6d4);
+    opacity: 0.6;
+}
+
+/* ============================= */
+/* LADO ESQUERDO */
+/* ============================= */
+
+.painel-header-left {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+/* ============================= */
+/* LADO DIREITO */
+/* ============================= */
+
+.painel-header-right {
+    display: flex;
+    align-items: center;
+    margin-right: 150px;
+    gap: 14px;
+}
+
+/* ============================= */
+/* AVATAR */
+/* ============================= */
+
+.painel-header-avatar {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    object-fit: cover;
+
+    border: 3px solid rgba(59, 130, 246, 0.8);
+
+    box-shadow:
+        0 0 25px rgba(59, 130, 246, 0.6),
+        inset 0 0 15px rgba(255, 255, 255, 0.1);
+
+    transition: all 0.4s ease;
+}
+
+/* ============================= */
+/* NOME */
+/* ============================= */
+
+.painel-header-nome {
+    font-size: 22px;
+    font-weight: 600;
+    color: #ffffff;
+    margin: 0;
+}
+
+/* ============================= */
+/* FUNÇÃO */
+/* ============================= */
+
+.painel-header-funcao {
+    font-size: 13px;
+    padding: 6px 16px;
+    border-radius: 20px;
+    background: rgba(56, 189, 248, 0.15);
+    color: #38bdf8;
+    font-weight: 500;
+}
+
+/* ============================= */
+/* NÍVEL */
+/* ============================= */
+
+.painel-header-nivel {
+    font-size: 13px;
+    padding: 6px 16px;
+    border-radius: 20px;
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+    color: #ffffff;
+    font-weight: 600;
+    box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+}
+
+/* ============================= */
+/* MODO COMPACTO */
+/* ============================= */
+.painel-header-compacto {
+    position: fixed !important;
+
+    top: 25px;
+    left: 25px;
+    /* ← agora vai para o canto superior esquerdo */
+    right: auto;
+    /* garante que não herde nada */
+
+    width: 85px;
+    height: 85px;
+
+    padding: 0;
+    margin: 0;
+
+    border-radius: 50%;
+
+    background: rgba(17, 24, 39, 0.95);
+    backdrop-filter: blur(20px);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6);
+
+    z-index: 9999;
+    /* garante que fique acima de tudo */
+}
+
+/* remove linha inferior no compacto */
+.painel-header-compacto::after {
+    display: none;
+}
+
+/* avatar reduzido */
+.painel-header-compacto .painel-header-avatar {
+    width: 60px;
+    height: 60px;
+}
+
+/* esconde lados */
+.painel-header-compacto .painel-header-right,
+.painel-header-compacto .painel-header-nome {
+    display: none;
+}
+
+/* ============================= */
+/* RESPONSIVO */
+/* ============================= */
+
+@media (max-width: 900px) {
+    .painel-header-container {
+        padding: 18px 25px;
+    }
+
+    .painel-header-avatar {
+        width: 60px;
+        height: 60px;
+    }
+
+    .painel-header-nome {
+        font-size: 18px;
+    }
+}

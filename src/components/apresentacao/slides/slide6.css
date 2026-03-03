@@ -1,0 +1,82 @@
+/* CONTAINER */
+
+.sl6-container {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: #0f1c2e;
+    color: #ffffff;
+    padding: 60px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.sl6-content {
+    max-width: 1000px;
+    font-size: 20px;
+    line-height: 1.6;
+}
+
+/* LINKS */
+
+.sl6-link-site {
+    color: #3b82f6;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.sl6-link-site:hover {
+    text-decoration: underline;
+}
+
+/* EMAIL */
+
+.sl6-link-email {
+    color: #10b981;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.sl6-link-email:hover {
+    text-decoration: underline;
+}
+
+/* WHATSAPP */
+
+.sl6-link-zap {
+    color: #25d366;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.sl6-link-zap:hover {
+    text-decoration: underline;
+}
+
+/* WRAPPER COM BOTÃO */
+
+.sl6-link-wrapper {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* BOTÃO COPIAR */
+
+.sl6-copy-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    padding: 4px 6px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.sl6-copy-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+}

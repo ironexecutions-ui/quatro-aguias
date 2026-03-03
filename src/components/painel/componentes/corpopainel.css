@@ -1,0 +1,392 @@
+/* ============================= */
+/* CONTAINER PRINCIPAL */
+/* ============================= */
+
+.painel-container {
+    display: flex;
+    background: linear-gradient(135deg, #0f172a 0%, #0b1220 100%);
+    font-family: "Inter", sans-serif;
+    color: #f1f5f9;
+    overflow: hidden;
+    min-height: 70vh;
+}
+
+/* ============================= */
+/* SIDEBAR */
+/* ============================= */
+
+.painel-sidebar {
+    width: 260px;
+    min-width: 260px;
+    background: rgba(17, 24, 39, 0.85);
+    backdrop-filter: blur(16px);
+    border-right: 1px solid rgba(255, 255, 255, 0.06);
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    box-shadow: 10px 0 40px rgba(0, 0, 0, 0.45);
+    transition: all 0.3s ease;
+}
+
+/* BOTÃO PRINCIPAL */
+
+.painel-menu-btn {
+    width: 100%;
+    padding: 14px;
+    border: 2px solid black;
+    background: linear-gradient(135deg, #2563eb, #3b82f6);
+    color: white;
+    margin: 5px 0;
+    font-weight: 600;
+    font-size: 15px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-family: 'Times New Roman', Times, serif;
+    transition: all 0.25s ease;
+}
+
+.painel-menu-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 35px rgba(37, 99, 235, 0.5);
+}
+
+.painel-menu-btn:active {
+    transform: scale(0.97);
+}
+
+/* ============================= */
+/* SUBMENU */
+/* ============================= */
+
+.painel-submenu {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    animation: fadeSlideIn 0.3s ease;
+}
+
+.painel-sub-btn {
+    width: 100%;
+    padding: 12px;
+    background: rgba(31, 41, 55, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    color: #e2e8f0;
+    font-weight: 500;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.painel-sub-btn:hover {
+    background: linear-gradient(135deg, #1e3a8a, #2563eb);
+    border-color: rgba(59, 130, 246, 0.5);
+    transform: translateX(4px);
+    box-shadow: 0 8px 20px rgba(59, 130, 246, 0.3);
+}
+
+.painel-sub-btn:active {
+    transform: scale(0.97);
+}
+
+/* ============================= */
+/* ÁREA ADMIN */
+/* ============================= */
+
+.painel-admin-area {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.painel-admin-extra {
+    margin-top: 15px;
+}
+
+/* ============================= */
+/* CONTEÚDO PRINCIPAL */
+/* ============================= */
+
+.painel-conteudo {
+    flex: 1;
+    padding: 40px;
+    position: relative;
+}
+
+
+/* ============================= */
+/* PLACEHOLDER */
+/* ============================= */
+
+.painel-placeholder {
+    font-size: 22px;
+    font-weight: 500;
+    color: rgba(203, 213, 225, 0.6);
+    text-align: center;
+    margin-top: 100px;
+    animation: fadeIn 0.4s ease;
+}
+
+/* ============================= */
+/* EDITOR */
+/* ============================= */
+
+.editor-container {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    animation: fadeIn 0.4s ease;
+}
+
+.editor-ferramentas {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.editor-textarea {
+    min-height: 220px;
+    padding: 18px;
+    font-size: 16px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(15, 23, 42, 0.7);
+    color: #f8fafc;
+    resize: vertical;
+    transition: all 0.25s ease;
+}
+
+.editor-textarea:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25);
+}
+
+.editor-salvar {
+    width: 220px;
+    padding: 14px;
+    background: linear-gradient(135deg, #10b981, #059669);
+    border: none;
+    color: white;
+    font-weight: 600;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    box-shadow: 0 8px 25px rgba(16, 185, 129, 0.35);
+}
+
+.editor-salvar:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 35px rgba(16, 185, 129, 0.5);
+}
+
+.editor-salvar:active {
+    transform: scale(0.97);
+}
+
+.editor-preview {
+    border-radius: 14px;
+    padding: 25px;
+    min-height: 220px;
+    background: rgba(30, 41, 59, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(10px);
+}
+
+/* ============================= */
+/* ANIMAÇÕES */
+/* ============================= */
+
+@keyframes fadeSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* ============================= */
+/* SIDEBAR NORMAL */
+/* ============================= */
+
+.painel-sidebar {
+    width: 260px;
+    min-width: 260px;
+    max-height: 300px;
+    position: sticky;
+    top: 40px;
+    transition: all 0.35s ease;
+    z-index: 9998;
+}
+
+/* ============================= */
+/* SIDEBAR RECOLHIDA */
+/* ============================= */
+
+.painel-sidebar.recolhida {
+    position: fixed;
+    top: 120px;
+    left: -65px;
+
+    width: 60px;
+    height: 60px;
+
+    padding: 0;
+    margin: 0;
+
+    background: none !important;
+    backdrop-filter: none !important;
+    box-shadow: none !important;
+    border: none !important;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    z-index: 9998;
+}
+
+/* ============================= */
+/* SIDEBAR EXPANDIDA FIXA */
+/* ============================= */
+
+.painel-sidebar.expandida-fixa {
+    position: fixed;
+    top: 120px;
+    left: 20px;
+    width: 260px;
+    max-height: 300px;
+    background: rgba(17, 24, 39, 0.95);
+    backdrop-filter: blur(16px);
+    border-radius: 14px;
+    padding: 25px 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+/* ============================= */
+/* BOLINHA */
+/* ============================= */
+
+.painel-bolinha {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #2563eb, #3b82f6);
+    color: white;
+    font-size: 22px;
+    cursor: pointer;
+    box-shadow: 0 8px 25px rgba(37, 99, 235, 0.4);
+    transition: all 0.25s ease;
+    z-index: 9999;
+}
+
+.painel-bolinha:hover {
+    transform: scale(1.1);
+}
+
+/* ============================= */
+/* CONTEÚDO BASE */
+/* ============================= */
+
+.painel-conteudo {
+    flex: 1;
+    padding: 60px;
+    transition: all 0.35s ease;
+}
+
+/* ============================= */
+/* QUANDO SIDEBAR RECOLHIDA */
+/* ============================= */
+
+.painel-conteudo.modo-recolhido {
+    margin-left: 0;
+}
+
+/* ============================= */
+/* QUANDO SIDEBAR EXPANDIDA FIXA */
+/* ============================= */
+
+.painel-conteudo.modo-expandido-fixo {
+    margin-left: 290px;
+}
+
+/* ============================= */
+/* BARRA PERSONALIZADA SIDEBAR */
+/* ============================= */
+
+.painel-sidebar-barra {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 4px;
+    height: 100%;
+    border-radius: 0 4px 4px 0;
+    background: linear-gradient(180deg,
+            #2563eb 0%,
+            #3b82f6 35%,
+            #10b981 70%,
+            #f59e0b 100%);
+    box-shadow:
+        0 0 15px rgba(59, 130, 246, 0.6),
+        0 0 25px rgba(16, 185, 129, 0.4);
+    opacity: 0.9;
+    pointer-events: none;
+}
+
+/* Ajuste quando recolhida */
+.painel-sidebar.recolhida .painel-sidebar-barra {
+    display: none;
+}
+
+/* ============================= */
+/* SIDEBAR COM SCROLL INTERNO */
+/* ============================= */
+
+.painel-sidebar {
+    position: relative;
+    height: calc(100vh - 120px);
+    max-height: calc(100vh - 120px);
+    overflow: hidden;
+}
+
+/* Área que realmente rola */
+.painel-sidebar-scroll {
+    overflow-y: auto;
+    padding-right: 6px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Scrollbar personalizada */
+.painel-sidebar-scroll::-webkit-scrollbar {
+    width: 6px;
+}
+
+.painel-sidebar-scroll::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.painel-sidebar-scroll::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #2563eb, #10b981);
+    border-radius: 10px;
+}
+
+.painel-sidebar-scroll::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #3b82f6, #059669);
+}

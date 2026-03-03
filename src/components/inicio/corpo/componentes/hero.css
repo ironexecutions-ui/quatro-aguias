@@ -1,0 +1,186 @@
+.qa-hero {
+    position: relative;
+    min-height: 90vh;
+    padding: 0 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+
+    background-image: url("./imagens/asa.png");
+    background-size: cover;
+    background-position: right center;
+    background-repeat: no-repeat;
+    background-color: #0b1626;
+}
+
+/* Luz radial sutil */
+.qa-hero::before {
+    content: "";
+    position: absolute;
+    top: -200px;
+    right: -200px;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(255, 60, 60, 0.15), transparent 70%);
+    pointer-events: none;
+}
+
+/* Overlay leve escuro */
+.qa-hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg,
+            rgba(0, 0, 0, 0.4) 0%,
+            rgba(0, 0, 0, 0.6) 100%);
+    pointer-events: none;
+}
+
+.qa-hero-container {
+    position: relative;
+    max-width: 1000px;
+    z-index: 2;
+}
+
+/* TÍTULO */
+.qa-hero-title {
+    font-size: 56px;
+    font-weight: 800;
+    line-height: 1.15;
+    margin-bottom: 30px;
+    color: #ffffff;
+    letter-spacing: -1px;
+    text-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* DESCRIÇÃO */
+.qa-hero-description {
+    font-size: 20px;
+    line-height: 1.8;
+    color: #c7d3e0;
+    margin-bottom: 50px;
+}
+
+/* BOTÃO */
+.qa-hero-cta {
+    position: relative;
+    padding: 18px 50px;
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    color: white;
+    background: linear-gradient(135deg, #ff3c3c, #ff6a00);
+    box-shadow: 0 15px 40px rgba(255, 60, 60, 0.4);
+    transition: all 0.35s ease;
+    overflow: hidden;
+}
+
+/* brilho animado */
+.qa-hero-cta::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg,
+            transparent,
+            rgba(255, 255, 255, 0.4),
+            transparent);
+    transition: all 0.6s ease;
+}
+
+.qa-hero-cta:hover::before {
+    left: 100%;
+}
+
+.qa-hero-cta:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 25px 60px rgba(255, 60, 60, 0.6);
+}
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 1024px) {
+
+    .qa-hero {
+        padding: 0 60px;
+        min-height: 80vh;
+        background-position: center;
+    }
+
+    .qa-hero-title {
+        font-size: 42px;
+    }
+
+    .qa-hero-description {
+        font-size: 18px;
+    }
+
+}
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 768px) {
+
+    .qa-hero {
+        padding: 80px 25px;
+        min-height: auto;
+        background-position: center;
+        text-align: center;
+    }
+
+    .qa-hero-title {
+        font-size: 32px;
+        line-height: 1.25;
+        margin-bottom: 20px;
+    }
+
+    .qa-hero-description {
+        font-size: 16px;
+        line-height: 1.6;
+        margin-bottom: 35px;
+    }
+
+    .qa-hero-cta {
+        width: 100%;
+        max-width: 320px;
+        padding: 14px 20px;
+        font-size: 15px;
+    }
+
+}
+
+/* ========================================
+   MOBILE PEQUENO
+======================================== */
+
+@media (max-width: 480px) {
+
+    .qa-hero {
+        padding: 70px 18px;
+    }
+
+    .qa-hero-title {
+        font-size: 24px;
+    }
+
+    .qa-hero-description {
+        font-size: 14px;
+    }
+
+    .qa-hero-cta {
+        font-size: 14px;
+        padding: 12px 16px;
+        border-radius: 8px;
+    }
+
+}

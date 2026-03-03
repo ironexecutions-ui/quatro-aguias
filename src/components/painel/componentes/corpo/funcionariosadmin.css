@@ -1,0 +1,409 @@
+.funcadmin-container {
+    padding: 50px;
+    color: #ffffff;
+    background: linear-gradient(145deg, #0f1220, #14182b);
+    min-height: 100vh;
+}
+
+.funcadmin-title {
+    font-size: 28px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 40px;
+    background: linear-gradient(90deg, #6ea8ff, #a855f7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.funcadmin-list {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+/* CARD PRINCIPAL */
+.funcadmin-wrapper {
+    border-radius: 16px;
+    overflow: hidden;
+    background: rgba(30, 35, 55, 0.6);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.35s ease;
+}
+
+.funcadmin-wrapper:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4);
+}
+
+/* CABEÇALHO DO USUÁRIO */
+.funcadmin-card {
+    padding: 20px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.funcadmin-card:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.funcadmin-card span:first-child {
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.funcadmin-email {
+    font-size: 14px;
+    opacity: 0.65;
+}
+
+/* DETALHES EXPANDIDOS */
+.funcadmin-detalhes {
+    padding: 30px;
+    background: linear-gradient(145deg, #14182b, #101322);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    animation: fadeSlide 0.25s ease forwards;
+}
+
+.funcadmin-detalhes div {
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding-bottom: 6px;
+}
+
+.funcadmin-detalhes strong {
+    font-weight: 500;
+    opacity: 0.8;
+}
+
+/* FOTO */
+.funcadmin-foto-area {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.funcadmin-avatar {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid rgba(120, 140, 255, 0.6);
+    box-shadow:
+        0 0 20px rgba(120, 140, 255, 0.4),
+        0 0 40px rgba(168, 85, 247, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.funcadmin-avatar:hover {
+    transform: scale(1.05);
+    box-shadow:
+        0 0 25px rgba(120, 140, 255, 0.6),
+        0 0 60px rgba(168, 85, 247, 0.4);
+}
+
+/* BADGE FUNÇÃO */
+.funcadmin-badge {
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+    background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+    color: #fff;
+}
+
+/* ANIMAÇÃO */
+@keyframes fadeSlide {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.funcadmin-busca-area {
+    margin-bottom: 40px;
+}
+
+.funcadmin-input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.funcadmin-resultados {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.funcadmin-result-card {
+    padding: 10px;
+    border-radius: 6px;
+    background: #2a2f45;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.funcadmin-result-card:hover {
+    background: #3a3f5c;
+}
+
+/* MODAL */
+.funcadmin-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.65);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+}
+
+.funcadmin-modal-box {
+    background: #1c1f2b;
+    padding: 30px;
+    border-radius: 12px;
+    width: 400px;
+    text-align: center;
+}
+
+.funcadmin-modal-buttons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.funcadmin-btn-cancel {
+    background: #444;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.funcadmin-btn-confirm {
+    background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+    border: none;
+    padding: 10px 18px;
+    border-radius: 6px;
+    cursor: pointer;
+    color: white;
+}
+
+.funcadmin-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.funcadmin-btn-rebaixar {
+    background: linear-gradient(90deg, #f59e0b, #ef4444);
+    border: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    color: white;
+}
+
+.funcadmin-btn-delete {
+    background: #991b1b;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    color: white;
+}
+
+/* ===== INPUT MELHORADO ===== */
+
+.funcadmin-input {
+    background: rgba(255, 255, 255, 0.05);
+    color: #fff;
+    transition: all 0.25s ease;
+}
+
+.funcadmin-input::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.funcadmin-input:focus {
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 0 0 2px rgba(110, 168, 255, 0.4);
+}
+
+/* ===== RESULTADOS HOVER MAIS SUAVE ===== */
+
+.funcadmin-result-card:hover {
+    background: #3a3f5c;
+    transform: translateX(4px);
+}
+
+/* ===== BOTÕES AÇÃO MELHORADOS ===== */
+
+.funcadmin-btn-rebaixar,
+.funcadmin-btn-delete,
+.funcadmin-btn-confirm,
+.funcadmin-btn-cancel {
+    transition: all 0.25s ease;
+    font-weight: 500;
+}
+
+.funcadmin-btn-rebaixar:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(245, 158, 11, 0.4);
+}
+
+.funcadmin-btn-delete:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(153, 27, 27, 0.5);
+}
+
+.funcadmin-btn-confirm:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(139, 92, 246, 0.5);
+}
+
+.funcadmin-btn-cancel:hover {
+    background: #555;
+}
+
+/* ===== MODAL ANIMAÇÃO ===== */
+
+.funcadmin-modal {
+    animation: fadeBackdrop 0.2s ease forwards;
+}
+
+.funcadmin-modal-box {
+    animation: scaleIn 0.25s ease forwards;
+}
+
+@keyframes fadeBackdrop {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* ===== SCROLL CUSTOM ===== */
+
+.funcadmin-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.funcadmin-container::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.funcadmin-container::-webkit-scrollbar-thumb {
+    background: linear-gradient(#3b82f6, #8b5cf6);
+    border-radius: 10px;
+}
+
+.funcadmin-nivel-area {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.funcadmin-nivel-botoes {
+    display: flex;
+    gap: 8px;
+}
+
+.funcadmin-btn-nivel-up,
+.funcadmin-btn-nivel-down {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+    transition: 0.2s ease;
+}
+
+.funcadmin-btn-nivel-up {
+    background: #22c55e;
+    color: white;
+}
+
+.funcadmin-btn-nivel-up:hover {
+    background: #16a34a;
+}
+
+.funcadmin-btn-nivel-down {
+    background: #ef4444;
+    color: white;
+}
+
+.funcadmin-btn-nivel-down:hover {
+    background: #dc2626;
+}
+
+/* ===================================== */
+/* 🔢 ESTILO DO NÚMERO DO NÍVEL */
+/* ===================================== */
+
+.funcadmin-nivel-valor {
+    min-width: 40px;
+    height: 36px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: linear-gradient(135deg, #1e293b, #0f172a);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    border-radius: 10px;
+
+    font-size: 16px;
+    font-weight: 600;
+    color: #38bdf8;
+
+    box-shadow:
+        inset 0 0 10px rgba(0, 0, 0, 0.6),
+        0 4px 10px rgba(0, 0, 0, 0.4);
+
+    transition: all 0.2s ease;
+}
+
+.funcadmin-nivel-valor:hover {
+    transform: scale(1.05);
+    box-shadow:
+        inset 0 0 12px rgba(0, 0, 0, 0.7),
+        0 6px 14px rgba(0, 0, 0, 0.5);
+}

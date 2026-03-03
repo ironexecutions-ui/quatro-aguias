@@ -1,0 +1,424 @@
+.qa-footer-container {
+    position: relative;
+    background: linear-gradient(135deg, #0b1626 0%, #13263f 100%);
+    color: #ffffff;
+    padding: 40px 60px 10px;
+    box-sizing: border-box;
+    overflow: hidden;
+    margin-top: 40px;
+    border-radius: 0 0 30px 30px;
+}
+
+/* Linha luminosa superior */
+.qa-footer-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, #ff3c3c, #ff6a00, #ff3c3c);
+}
+
+/* ================= GRID ================= */
+
+.qa-footer-content {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 60px;
+}
+
+/* ================= COLUNAS ================= */
+
+.qa-footer-col {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+/* ================= TÍTULOS ================= */
+
+.qa-footer-title {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin: 0;
+}
+
+.qa-footer-subtitle {
+    font-size: 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #8fa8c5;
+    margin-bottom: 10px;
+}
+
+/* ================= TEXTO ================= */
+
+.qa-footer-text {
+    font-size: 14px;
+    line-height: 1.8;
+    color: #b7c8db;
+    margin: 0;
+    transition: 0.3s ease;
+}
+
+.qa-footer-text:hover {
+    color: #ffffff;
+}
+
+/* ================= LINKS ================= */
+
+.qa-footer-link {
+    text-decoration: none;
+    color: #d6e2f0;
+    font-size: 14px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.qa-footer-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0;
+    height: 2px;
+    background: #ff3c3c;
+    transition: width 0.3s ease;
+}
+
+.qa-footer-link:hover {
+    color: #ffffff;
+}
+
+.qa-footer-link:hover::after {
+    width: 100%;
+}
+
+/* ================= DIVISOR ================= */
+
+.qa-footer-bottom {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 13px;
+    color: #7f98b6;
+    padding-top: 15px;
+    border-top: 2px solid rgba(255, 255, 255, 0.08);
+    letter-spacing: 0.5px;
+}
+
+/* ================= RESPONSIVO ================= */
+
+@media (max-width: 992px) {
+    .qa-footer-container {
+        padding: 60px 30px 30px;
+    }
+
+    .qa-footer-content {
+        gap: 40px;
+    }
+}
+
+@media (max-width: 600px) {
+    .qa-footer-container {
+        padding: 50px 20px 25px;
+    }
+
+    .qa-footer-content {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .qa-footer-title {
+        font-size: 20px;
+    }
+}
+
+/* ========================================
+   NOTEBOOK
+======================================== */
+
+@media (max-width: 1200px) {
+
+    .qa-footer-container {
+        padding: 50px 40px 20px;
+    }
+
+    .qa-footer-content {
+        gap: 45px;
+    }
+
+}
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 992px) {
+
+    .qa-footer-container {
+        padding: 50px 30px 25px;
+        border-radius: 0;
+    }
+
+    .qa-footer-content {
+        gap: 35px;
+    }
+
+}
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 768px) {
+
+    .qa-footer-container {
+        padding: 45px 20px 20px;
+        text-align: center;
+    }
+
+    .qa-footer-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .qa-footer-col {
+        align-items: center;
+    }
+
+    .qa-footer-subtitle {
+        margin-bottom: 6px;
+    }
+
+    .qa-footer-text {
+        font-size: 13px;
+        line-height: 1.6;
+    }
+
+    .qa-footer-link {
+        font-size: 13px;
+    }
+
+}
+
+/* ========================================
+   MOBILE PEQUENO
+======================================== */
+
+@media (max-width: 480px) {
+
+    .qa-footer-container {
+        padding: 40px 15px 15px;
+    }
+
+    .qa-footer-title {
+        font-size: 18px;
+    }
+
+    .qa-footer-subtitle {
+        font-size: 13px;
+    }
+
+    .qa-footer-text {
+        font-size: 12px;
+    }
+
+    .qa-footer-bottom {
+        font-size: 11px;
+    }
+
+}
+
+/* =========================================
+   CONTATO FLUTUANTE HORIZONTAL
+========================================= */
+
+.qa-contato-flutuante {
+    position: fixed;
+    background-image:
+        linear-gradient(135deg, #05080f 0%, #0b1f3a 50%, #132b4f 100%),
+        url("./imagens/asa.png");
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-blend-mode: overlay;
+    padding: 7px;
+    border-radius: 0 20px 0 0;
+    bottom: 0px !important;
+    left: 0px !important;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 18px;
+
+    z-index: 9999;
+}
+
+/* Botões apenas com imagem */
+
+.qa-btn-flutuante {
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: transform 0.25s ease;
+}
+
+.qa-btn-flutuante img {
+    width: 46px;
+    height: 46px;
+    object-fit: contain;
+}
+
+/* Efeito leve ao passar o mouse */
+
+.qa-btn-flutuante:hover {
+    transform: scale(1.15);
+}
+
+/* =========================================
+   RESPONSIVO
+========================================= */
+
+@media (max-width: 992px) {
+    .qa-contato-flutuante {
+        bottom: 20px;
+        left: 20px;
+        gap: 15px;
+    }
+
+    .qa-btn-flutuante img {
+        width: 32px;
+        height: 32px;
+    }
+}
+
+@media (max-width: 768px) {
+    .qa-contato-flutuante {
+        bottom: 18px;
+        left: 18px;
+        gap: 12px;
+    }
+
+    .qa-btn-flutuante img {
+        width: 28px;
+        height: 28px;
+    }
+}
+
+@media (max-width: 480px) {
+    .qa-contato-flutuante {
+        bottom: 15px;
+        left: 15px;
+        gap: 10px;
+    }
+
+    .qa-btn-flutuante img {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+/* =========================================
+   ANIMAÇÃO MODERNA E PODEROSA
+========================================= */
+
+.qa-contato-flutuante {
+    position: fixed;
+    background-image:
+        linear-gradient(135deg, #05080f 0%, #0b1f3a 50%, #132b4f 100%),
+        url("./imagens/asa.png");
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-blend-mode: overlay;
+
+    padding: 7px;
+    border-radius: 0 20px 0 0;
+    bottom: 0px;
+    left: 0px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 18px;
+
+    z-index: 9999;
+
+    transition: all 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Estado visível */
+
+.qa-flutuante-ativo {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    pointer-events: auto;
+}
+
+/* Estado oculto com efeito poderoso */
+
+.qa-flutuante-inativo {
+    opacity: 0;
+    transform: translateY(40px) scale(0.9);
+    pointer-events: none;
+}
+
+/* Efeito extra moderno ao aparecer */
+
+.qa-flutuante-ativo {
+    animation: qaImpact 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes qaImpact {
+    0% {
+        transform: translateY(60px) scale(0.85);
+        opacity: 0;
+    }
+
+    60% {
+        transform: translateY(-6px) scale(1.05);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(0) scale(1);
+    }
+}
+
+.qa-map-icon {
+    width: 60px !important;
+    margin-left: -15px;
+}
+
+/* Quando for menor que 485px */
+
+@media (max-width: 485px) {
+    .qa-map-icon {
+        width: 60px !important;
+        margin-left: -22px;
+    }
+}
+
+.qa-footer-clickable {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.qa-footer-clickable:hover {
+    color: #3b82f6;
+    text-decoration: underline;
+}

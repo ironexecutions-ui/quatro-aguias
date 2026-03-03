@@ -1,0 +1,163 @@
+/* ================================
+   WRAPPER PRINCIPAL
+================================ */
+
+.qa-termos-wrapper {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #0f1c2e, #162a44);
+    position: relative;
+    overflow: hidden;
+}
+
+/* brilho de fundo suave */
+.qa-termos-wrapper::before {
+    content: "";
+    position: absolute;
+    width: 700px;
+    height: 700px;
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.15), transparent 70%);
+    top: -250px;
+    right: -250px;
+    z-index: 0;
+}
+
+/* ================================
+   CONTAINER
+================================ */
+
+.qa-termos-container {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 800px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 24px;
+    padding: 60px 50px;
+    box-shadow: 0 40px 90px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
+    text-align: left;
+    animation: fadeInTermos 0.6s ease forwards;
+}
+
+/* ================================
+   TÍTULO
+================================ */
+
+.qa-termos-title {
+    font-size: 32px;
+    font-weight: 800;
+    margin-bottom: 30px;
+    color: #0f1c2e;
+}
+
+.qa-termos-text {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #4a5a70;
+    margin-bottom: 40px;
+}
+
+/* ================================
+   BOTÃO
+================================ */
+
+.qa-termos-button {
+    padding: 16px 32px;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    background: linear-gradient(135deg, #1976d2, #00c6ff);
+    color: white;
+    box-shadow: 0 15px 40px rgba(25, 118, 210, 0.4);
+    transition: all 0.3s ease;
+}
+
+.qa-termos-button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 25px 60px rgba(0, 198, 255, 0.5);
+}
+
+.qa-termos-button:active {
+    transform: translateY(-1px);
+}
+
+/* ================================
+   RESPONSIVO
+================================ */
+
+@media (max-width: 1024px) {
+
+    .qa-termos-container {
+        padding: 45px 35px;
+    }
+
+    .qa-termos-title {
+        font-size: 26px;
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    .qa-termos-wrapper {
+        padding: 40px 15px;
+    }
+
+    .qa-termos-container {
+        padding: 35px 25px;
+        border-radius: 18px;
+    }
+
+    .qa-termos-title {
+        font-size: 22px;
+    }
+
+    .qa-termos-text {
+        font-size: 14px;
+    }
+
+    .qa-termos-button {
+        width: 100%;
+        padding: 14px;
+        font-size: 14px;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .qa-termos-container {
+        padding: 28px 18px;
+    }
+
+    .qa-termos-title {
+        font-size: 20px;
+    }
+
+    .qa-termos-text {
+        font-size: 13px;
+    }
+
+}
+
+/* ================================
+   ANIMAÇÃO
+================================ */
+
+@keyframes fadeInTermos {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

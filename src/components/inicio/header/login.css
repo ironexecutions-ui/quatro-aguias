@@ -1,0 +1,254 @@
+/* ===============================
+   WRAPPER PRINCIPAL
+================================= */
+
+.qa-login-wrapper {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Efeito de luz dinâmica no fundo */
+.qa-login-wrapper::before {
+    content: "";
+    position: absolute;
+    width: 700px;
+    height: 700px;
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.25) 0%, transparent 70%);
+    top: -200px;
+    left: -200px;
+    animation: pulseBackground 10s infinite ease-in-out;
+    z-index: 0;
+}
+
+.qa-login-wrapper::after {
+    content: "";
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(16, 185, 129, 0.2) 0%, transparent 70%);
+    bottom: -150px;
+    right: -150px;
+    animation: pulseBackground 12s infinite ease-in-out reverse;
+    z-index: 0;
+}
+
+@keyframes pulseBackground {
+    0% {
+        transform: scale(1);
+        opacity: 0.7;
+    }
+
+    50% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 0.7;
+    }
+}
+
+
+/* ===============================
+   LADO DIREITO LOGIN
+================================= */
+
+.qa-login-right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+    padding: 40px;
+}
+
+/* ===============================
+   CONTAINER DO LOGIN
+================================= */
+.qa-login-container {
+    width: 100%;
+    max-width: 420px;
+    padding: 50px 40px;
+    border-radius: 24px;
+
+    background: rgba(255, 254, 254, 0.781);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    box-shadow:
+        0 25px 60px rgba(0, 0, 0, 0.45),
+        inset 0 0 40px rgba(255, 255, 255, 0.05);
+
+    text-align: center;
+
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.qa-login-container:hover {
+    transform: translateY(-6px);
+    box-shadow:
+        0 35px 80px rgba(0, 0, 0, 0.55),
+        inset 0 0 60px rgba(255, 255, 255, 0.08);
+}
+
+/* ===============================
+   TÍTULO
+================================= */
+
+.qa-login-title {
+    font-size: 26px;
+    font-weight: 600;
+    color: #030303;
+    margin-bottom: 30px;
+    letter-spacing: 0.5px;
+}
+
+/* Linha decorativa abaixo do título */
+.qa-login-title::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    margin: 12px auto 0 auto;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #3b82f6, #10b981);
+}
+
+
+/* ===============================
+   BOTÃO GOOGLE PERSONALIZADO
+================================= */
+
+/* Envolve automaticamente o botão Google */
+.qa-login-container>div {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+/* ===============================
+   RESPONSIVO
+================================= */
+
+@media (max-width: 1024px) {
+    .qa-login-wrapper {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .qa-login-right {
+        padding: 30px 20px;
+    }
+
+    .qa-login-container {
+        padding: 40px 25px;
+        border-radius: 18px;
+    }
+
+    .qa-login-title {
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .qa-login-container {
+        padding: 35px 20px;
+    }
+
+    .qa-login-title {
+        font-size: 20px;
+    }
+}
+
+
+/* ===============================
+   ANIMAÇÃO DE ENTRADA SUAVE
+================================= */
+
+.qa-login-container {
+    animation: fadeSlideIn 0.8s ease forwards;
+}
+
+@keyframes fadeSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 1024px) {
+
+    .qa-login-wrapper {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .qa-login-right {
+        width: 100%;
+        padding: 40px 20px;
+    }
+
+}
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 768px) {
+
+    .qa-login-wrapper {
+        padding: 20px 0;
+    }
+
+    .qa-login-container {
+        max-width: 100%;
+        padding: 35px 25px;
+        border-radius: 18px;
+    }
+
+    .qa-login-title {
+        font-size: 22px;
+    }
+
+}
+
+/* ========================================
+   MOBILE PEQUENO
+======================================== */
+
+@media (max-width: 480px) {
+
+    .qa-login-container {
+        padding: 28px 18px;
+        border-radius: 16px;
+    }
+
+    .qa-login-title {
+        font-size: 20px;
+    }
+
+}

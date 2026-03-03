@@ -1,0 +1,278 @@
+.saqa-servicos {
+    position: relative;
+    padding: 180px 140px;
+    background: linear-gradient(135deg, #0b1626 0%, #13263f 50%, #1b3558 100%);
+    text-align: center;
+    overflow: hidden;
+}
+
+/* camada luminosa dinâmica */
+.saqa-servicos::before {
+    content: "";
+    position: absolute;
+    top: -300px;
+    right: -300px;
+    width: 700px;
+    height: 700px;
+    background: radial-gradient(circle, rgba(255, 60, 60, 0.12), transparent 70%);
+    filter: blur(40px);
+    animation: glowMove 8s infinite alternate ease-in-out;
+    pointer-events: none;
+}
+
+@keyframes glowMove {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    100% {
+        transform: translate(-40px, 40px);
+    }
+}
+
+.saqa-servicos-container {
+    position: relative;
+    z-index: 2;
+}
+
+/* TÍTULO */
+.saqa-section-heading {
+    font-size: 48px;
+    font-weight: 900;
+    margin-bottom: 100px;
+    color: #ffffff;
+    letter-spacing: -1.5px;
+    position: relative;
+    text-transform: uppercase;
+}
+
+.saqa-section-heading::after {
+    content: "";
+    position: absolute;
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 5px;
+    border-radius: 4px;
+    background: linear-gradient(90deg, #ff3c3c, #ff6a00);
+    transition: 0.5s ease;
+}
+
+.saqa-servicos-container:hover .saqa-section-heading::after {
+    width: 220px;
+}
+
+/* GRID */
+.saqa-servicos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 60px;
+    perspective: 1200px;
+}
+
+/* CARD */
+.saqa-servico-card {
+    position: relative;
+    padding: 70px 50px;
+    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(25px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: white;
+    transition: transform 0.6s ease, box-shadow 0.6s ease;
+    overflow: hidden;
+    cursor: pointer;
+    transform-style: preserve-3d;
+}
+
+/* iluminação interna dinâmica */
+.saqa-servico-card::before {
+    content: "";
+    position: absolute;
+    inset: -50%;
+    background: radial-gradient(circle at center,
+            rgba(255, 60, 60, 0.25),
+            transparent 60%);
+    opacity: 0;
+    transition: opacity 0.6s ease;
+}
+
+/* borda glow avançada */
+.saqa-servico-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 24px;
+    padding: 1px;
+    background: linear-gradient(135deg, #ff3c3c, #ff6a00);
+    -webkit-mask:
+        linear-gradient(#000 0 0) content-box,
+        linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: 0.5s ease;
+}
+
+/* efeito 3D real */
+.saqa-servico-card:hover {
+    transform: rotateX(5deg) rotateY(-5deg) translateY(-20px) scale(1.05);
+    box-shadow: 0 60px 120px rgba(0, 0, 0, 0.6);
+}
+
+.saqa-servico-card:hover::before {
+    opacity: 1;
+}
+
+.saqa-servico-card:hover::after {
+    opacity: 1;
+}
+
+/* título */
+.saqa-card-title {
+    font-size: 26px;
+    font-weight: 800;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+/* texto */
+.saqa-card-text {
+    font-size: 18px;
+    line-height: 1.9;
+    color: #c7d3e0;
+    transition: color 0.4s ease;
+}
+
+.saqa-servico-card:hover .saqa-card-text {
+    color: #ffffff;
+}
+
+/* ========================================
+   NOTEBOOK / TABLET GRANDE
+======================================== */
+
+@media (max-width: 1200px) {
+
+    .saqa-servicos {
+        padding: 140px 80px;
+    }
+
+    .saqa-section-heading {
+        font-size: 40px;
+        margin-bottom: 80px;
+    }
+
+    .saqa-servicos-grid {
+        gap: 40px;
+    }
+
+    .saqa-servico-card {
+        padding: 50px 35px;
+    }
+
+}
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 1024px) {
+
+    .saqa-servicos {
+        padding: 120px 60px;
+    }
+
+    .saqa-servicos-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 35px;
+    }
+
+    .saqa-section-heading {
+        font-size: 34px;
+    }
+
+    .saqa-card-title {
+        font-size: 22px;
+    }
+
+    .saqa-card-text {
+        font-size: 16px;
+        line-height: 1.7;
+    }
+
+}
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 768px) {
+
+    .saqa-servicos {
+        padding: 90px 25px;
+    }
+
+    .saqa-servicos-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        perspective: none;
+    }
+
+    .saqa-section-heading {
+        font-size: 28px;
+        margin-bottom: 50px;
+    }
+
+    .saqa-section-heading::after {
+        height: 3px;
+        width: 80px;
+    }
+
+    .saqa-servico-card {
+        padding: 35px 25px;
+        border-radius: 18px;
+        transform: none !important;
+    }
+
+    .saqa-servico-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
+    }
+
+    .saqa-card-title {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+
+    .saqa-card-text {
+        font-size: 15px;
+    }
+
+}
+
+/* ========================================
+   MOBILE PEQUENO
+======================================== */
+
+@media (max-width: 480px) {
+
+    .saqa-servicos {
+        padding: 70px 18px;
+    }
+
+    .saqa-section-heading {
+        font-size: 22px;
+    }
+
+    .saqa-card-title {
+        font-size: 18px;
+    }
+
+    .saqa-card-text {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+}

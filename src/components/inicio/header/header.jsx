@@ -77,74 +77,75 @@ export default function Header() {
 
     return (
         <>
-            <header className={`qa-header-container ${mostrarBotaoTopo ? "qa-header-compact" : "qa-header-expandido"}`}>                <div className="qa-header-content">
+            <header className={`qa-header-container ${mostrarBotaoTopo ? "qa-header-hide" : ""}`}>
+                <div className="qa-header-content">
 
-                <div className="qa-header-logo-area">
-                    <img
-                        src="././qat.avif"
-                        alt="Quatro Águias Transportes"
-                        className="qa-header-logo-img"
-                    />
-                    <div className="qa-header-text-area">
-                        <h1 className="qa-header-title">
-                            Quatro Águias
-                        </h1>
-                        <span className="qa-header-subtitle">
-                            Transporte e Logística
-                        </span>
+                    <div className="qa-header-logo-area">
+                        <img
+                            src="././qat.avif"
+                            alt="Quatro Águias Transportes"
+                            className="qa-header-logo-img"
+                        />
+                        <div className="qa-header-text-area">
+                            <h1 className="qa-header-title">
+                                Quatro Águias
+                            </h1>
+                            <span className="qa-header-subtitle">
+                                Transporte e Logística
+                            </span>
+                        </div>
                     </div>
-                </div>
 
-                <nav className="qa-header-nav-area">
+                    <nav className="qa-header-nav-area">
 
-                    <Link
-                        to="/apresentacao"
-                        className="qa-header-nav-link"
-                    >
-                        Ver Apresentação
-                    </Link>
-
-                    {!usuario && (
                         <Link
-                            to="/login"
+                            to="/apresentacao"
                             className="qa-header-nav-link"
                         >
-                            Login
+                            Ver Apresentação
                         </Link>
-                    )}
 
-                    {usuario && (
-                        <div className="qa-header-user-area">
-
-                            {usuario.foto_perfil && (
-                                <img
-                                    src={
-                                        usuario.foto_perfil.startsWith("http")
-                                            ? usuario.foto_perfil
-                                            : `${API_URL}${usuario.foto_perfil}`
-                                    }
-                                    alt="Foto"
-                                    className="qa-header-user-photo"
-                                />
-                            )}
-
-                            <span className="qa-header-user-name">
-                                {usuario.nome} {usuario.sobrenome}
-                            </span>
-
-                            <button
-                                onClick={() => setMostrarModal(true)}
-                                className="qa-header-logout-btn"
+                        {!usuario && (
+                            <Link
+                                to="/login"
+                                className="qa-header-nav-link"
                             >
-                                Sair
-                            </button>
+                                Login
+                            </Link>
+                        )}
 
-                        </div>
-                    )}
+                        {usuario && (
+                            <div className="qa-header-user-area">
 
-                </nav>
+                                {usuario.foto_perfil && (
+                                    <img
+                                        src={
+                                            usuario.foto_perfil.startsWith("http")
+                                                ? usuario.foto_perfil
+                                                : `${API_URL}${usuario.foto_perfil}`
+                                        }
+                                        alt="Foto"
+                                        className="qa-header-user-photo"
+                                    />
+                                )}
 
-            </div>
+                                <span className="qa-header-user-name">
+                                    {usuario.nome} {usuario.sobrenome}
+                                </span>
+
+                                <button
+                                    onClick={() => setMostrarModal(true)}
+                                    className="qa-header-logout-btn"
+                                >
+                                    Sair
+                                </button>
+
+                            </div>
+                        )}
+
+                    </nav>
+
+                </div>
             </header>
 
             {/* BOTÃO FLUTUANTE */}

@@ -7,7 +7,7 @@ import Rodape from "./components/inicio/rodape/rodape";
 import Apresentacao from "./components/apresentacao/apresentacao";
 import Login from "./components/inicio/header/login";
 import Corpologado from "./components/inicio/logado/corpologado";
-
+import Nota from "../public/nota";
 import Loading from "./others/loading";
 import NotFound from "./others/notfound";
 
@@ -97,7 +97,17 @@ export default function App() {
             )
           }
         />
-
+        {/* NOTA */}
+        <Route
+          path="/nota"
+          element={
+            <>
+              <Header />
+              <Nota />
+              <Rodape />
+            </>
+          }
+        />
         {/* APRESENTAÇÃO */}
         <Route
           path="/apresentacao/:idioma?"

@@ -4,7 +4,7 @@ import { GoogleLogin } from "@react-oauth/google";
 import { API_URL } from "../../../config";
 import Beneficios from "./beneficios";
 import Termos from "./termos";
-import "./Login.css";
+import "./login.css";
 
 export default function Login({ setLogado, setLoading }) {
 

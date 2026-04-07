@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "./Beneficios.css";
+import "./beneficios.css";
 
 export default function Beneficios() {
 

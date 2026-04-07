@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { API_URL } from "../../../config";
 import "./header.css";
-
+import logoQA from "./qat.avif";
 export default function Header() {
 
     const [usuario, setUsuario] = useState(null);
@@ -82,7 +82,7 @@ export default function Header() {
 
                     <div className="qa-header-logo-area">
                         <img
-                            src="./qat.avif"
+                            src={logoQA}
                             alt="Quatro Águias Transportes"
                             className="qa-header-logo-img"
                         />
@@ -156,7 +156,7 @@ export default function Header() {
                 >
                     {!usuario ? (
                         <img
-                            src="./qat.avif"
+                            src={logoQA}
                             alt="Topo"
                             className="qa-scroll-img qa-scroll-img-default"
                         />

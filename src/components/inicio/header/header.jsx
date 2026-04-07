@@ -82,7 +82,7 @@ export default function Header() {
 
                     <div className="qa-header-logo-area">
                         <img
-                            src="/qat.avif"
+                            src="./qat.avif"
                             alt="Quatro Águias Transportes"
                             className="qa-header-logo-img"
                         />
@@ -156,7 +156,7 @@ export default function Header() {
                 >
                     {!usuario ? (
                         <img
-                            src="/qat.avif"
+                            src="./qat.avif"
                             alt="Topo"
                             className="qa-scroll-img qa-scroll-img-default"
                         />

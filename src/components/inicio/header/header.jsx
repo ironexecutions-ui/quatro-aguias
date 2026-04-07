@@ -82,7 +82,7 @@ export default function Header() {
 
                     <div className="qa-header-logo-area">
                         <img
-                            src="../../qat.avif"
+                            src="../../../qat.avif"
                             alt="Quatro Águias Transportes"
                             className="qa-header-logo-img"
                         />

@@ -12,7 +12,7 @@ export default function EditorApresentacao({ idioma }) {
     useEffect(() => {
         async function carregar() {
             try {
-                const res = await fetch(`${API_URL}/apresentacao/painel/${idioma.idioma}`);
+                const res = await fetch(`${API_URL}/apresentacao/painel/${encodeURIComponent(idioma)}`);
                 const data = await res.json();
                 setDados(data);
             } catch (erro) {
@@ -65,7 +65,7 @@ export default function EditorApresentacao({ idioma }) {
         setMensagem("");
 
         try {
-            const res = await fetch(`${API_URL}/apresentacao/painel/${idioma.idioma}`, {
+            const res = await fetch(`${API_URL}/apresentacao/painel/${encodeURIComponent(idioma)}`, {
                 method: "PUT",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({

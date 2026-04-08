@@ -55,7 +55,8 @@ export default function CorpoPainel() {
         return () => window.removeEventListener("scroll", handleScroll);
 
     }, [sidebarExpandidaFixa]);
-
+    console.log("IDIOMA SELECIONADO:", idiomaSelecionado);
+    console.log("TELA ATIVA:", telaAtiva);
     return (
         <main className="painel-container">
 

@@ -1,0 +1,252 @@
+/* 🔥 CONTAINER PRINCIPAL */
+.caixas-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+}
+
+.caixas-container img {
+    width: 80px;
+    margin: auto auto;
+    display: flex;
+}
+
+/* 🔥 TÍTULO */
+.caixas-titulo {
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+/* 🔥 TEXTO SUCESSO */
+.caixas-sucesso {
+    text-align: center;
+    margin-bottom: 10px;
+    color: #2e7d32;
+    font-weight: 500;
+    font-size: 50px !important;
+}
+
+/* 🔥 INPUT */
+.caixas-input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 10px;
+
+    border-radius: 10px;
+    border: 1px solid #ccc;
+
+    font-size: 1rem;
+
+    transition: all 0.2s ease;
+}
+
+.caixas-input:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.2);
+}
+
+/* 🔥 BOTÃO PADRÃO */
+.caixas-botao {
+    width: 100%;
+    padding: 12px;
+
+    border: none;
+    border-radius: 10px;
+
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    color: white;
+
+    font-size: 1rem;
+    font-weight: 500;
+
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.caixas-botao:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* 🔥 BOTÃO SAIR */
+.caixas-botao-sair {
+    margin: 10px 0 20px;
+    width: 100%;
+    padding: 10px;
+
+    border: none;
+    border-radius: 10px;
+
+    background: #dc3545;
+    color: white;
+
+    font-weight: 500;
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.caixas-botao-sair:hover {
+    background: #b02a37;
+}
+
+/* 🔥 ERRO */
+.caixas-erro {
+    margin-top: 10px;
+    color: #d32f2f;
+    text-align: center;
+}
+
+/* ========================= */
+/* 🔥 MENU STICKY */
+/* ========================= */
+
+.menu-sticky {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    display: flex;
+    gap: 10px;
+
+    background: white;
+    padding: 10px;
+    margin-bottom: 20px;
+
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* 🔥 BOTÕES DO MENU */
+.menu-sticky button {
+    flex: 1;
+    padding: 12px;
+
+    border: none;
+    border-radius: 10px;
+
+    background: #f0f0f0;
+    color: #333;
+
+    font-weight: 500;
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+}
+
+.menu-sticky button:hover {
+    background: #e0e0e0;
+}
+
+.menu-sticky button.ativo {
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    color: white;
+
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+}
+
+/* ========================= */
+/* 🔥 CONTEÚDO */
+/* ========================= */
+
+.conteudo {
+    margin-top: 10px;
+}
+
+/* ========================= */
+/* 🔥 TABLET (até 900px) */
+/* ========================= */
+
+@media (max-width: 900px) {
+
+    .caixas-container {
+        padding: 15px;
+    }
+
+    .caixas-titulo {
+        font-size: 1.8rem;
+    }
+
+    .menu-sticky {
+        padding: 8px;
+        gap: 8px;
+    }
+
+    .menu-sticky button {
+        padding: 10px;
+        font-size: 0.95rem;
+    }
+
+}
+
+
+/* ========================= */
+/* 🔥 MOBILE (até 600px) */
+/* ========================= */
+
+@media (max-width: 600px) {
+
+    .caixas-container {
+        padding: 12px;
+    }
+
+    .caixas-titulo {
+        font-size: 1.5rem;
+    }
+
+    .caixas-sucesso {
+        font-size: 0.9rem;
+    }
+
+    .caixas-input {
+        padding: 10px;
+        font-size: 0.95rem;
+    }
+
+    .caixas-botao,
+    .caixas-botao-sair {
+        padding: 10px;
+        font-size: 0.95rem;
+    }
+
+    /* 🔥 MENU VERTICAL */
+    .menu-sticky {
+        flex-direction: column;
+        gap: 6px;
+        border-radius: 10px;
+    }
+
+    .menu-sticky button {
+        width: 100%;
+        font-size: 0.9rem;
+    }
+
+}
+
+
+/* ========================= */
+/* 🔥 MOBILE PEQUENO (até 400px) */
+/* ========================= */
+
+@media (max-width: 400px) {
+
+    .caixas-titulo {
+        font-size: 1.3rem;
+    }
+
+    .caixas-input {
+        font-size: 0.9rem;
+    }
+
+    .menu-sticky button {
+        padding: 9px;
+        font-size: 0.85rem;
+    }
+
+}

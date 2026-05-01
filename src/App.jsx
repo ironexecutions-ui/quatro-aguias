@@ -10,7 +10,7 @@ import Corpologado from "./components/inicio/logado/corpologado";
 import Nota from "../public/nota";
 import Loading from "./others/loading";
 import NotFound from "./others/notfound";
-
+import Caixas from "./components/caixas/caixas";
 import Painel from "./components/painel/painel";
 import "./app.css";
 export default function App() {
@@ -127,6 +127,7 @@ export default function App() {
 
         {/* 404 */}
         <Route path="*" element={<NotFound />} />
+        <Route path="/areas" element={<Caixas />} />
 
       </Routes>
 

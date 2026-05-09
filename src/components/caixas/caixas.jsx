@@ -3,7 +3,7 @@ import { API_URL } from "../../config";
 import "./caixas.css";
 import Posicionar from "./posicionar";
 import Lista from "./lista";
-
+import logoQAT from "../../../qat.avif";
 export default function Caixas() {
 
     const [chave, setChave] = useState("");
@@ -89,7 +89,7 @@ export default function Caixas() {
                 <div className="caixas-logo-area-unica">
 
                     <img
-                        src="../../qat.avif"
+                        src={logoQAT}
                         alt="Logo"
                         className="caixas-logo-unica"
                     />

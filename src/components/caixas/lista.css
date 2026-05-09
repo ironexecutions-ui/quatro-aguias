@@ -1,282 +1,835 @@
 /* 🔥 CONTAINER */
-.lista-container {
-    max-width: 900px;
+
+.lista_container_principal_unica {
+    max-width: 1200px;
+
     margin: 0 auto;
-    padding: 20px;
 
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    color: #222;
+    padding: 35px 20px 60px;
+
+    font-family:
+        "Segoe UI",
+        Tahoma,
+        Geneva,
+        Verdana,
+        sans-serif;
+
+    color: #1e293b;
 }
 
-/* 🔥 TÍTULO */
-.lista-container h2 {
-    text-align: center;
-    margin-bottom: 20px;
-    font-size: 2rem;
-    font-weight: 700;
-    color: #111;
+/* 🔥 TOPO */
+
+.lista_topo_area_unica {
+    margin-bottom: 28px;
 }
 
-/* 🔥 INPUT */
-.lista-container input {
-    width: 90%;
-    padding: 14px;
-    margin: auto auto;
-    display: flex;
-    border-radius: 14px;
-    border: 1px solid #ccc;
+.lista_titulo_principal_unico {
+    font-size: 2.5rem;
+
+    font-weight: 900;
+
+    color: #0f172a;
+
+    letter-spacing: -1.5px;
+
+    margin-bottom: 10px;
+}
+
+.lista_subtitulo_principal_unico {
+    font-size: 1rem;
+
+    color: #64748b;
+
+    line-height: 1.6;
+
+    max-width: 700px;
+}
+
+/* 🔥 BUSCA */
+
+.lista_busca_area_unica {
+    margin-bottom: 30px;
+}
+
+.lista_input_busca_unico {
+    width: 95%;
+
+    border: 1px solid #dbe4ee;
+
+    background: white;
+
+    border-radius: 22px;
+
+    padding: 18px 20px;
 
     font-size: 1rem;
-    margin-bottom: 20px;
 
-    transition: 0.2s;
+    color: #0f172a;
+
+    transition: 0.25s ease;
+
+    box-shadow:
+        0 6px 18px rgba(15, 23, 42, 0.05);
 }
 
-.lista-container input:focus {
+.lista_input_busca_unico::placeholder {
+    color: #94a3b8;
+}
+
+.lista_input_busca_unico:focus {
     outline: none;
-    border-color: #007bff;
-    box-shadow: 0 0 0 4px rgba(0, 123, 255, 0.15);
+
+    border-color: #3b82f6;
+
+    box-shadow:
+        0 0 0 5px rgba(59, 130, 246, 0.12),
+        0 10px 30px rgba(59, 130, 246, 0.12);
 }
 
 /* 🔥 LISTA */
-.lista-box {
+
+.lista_cards_area_unica {
     display: flex;
     flex-direction: column;
-    gap: 18px;
+
+    gap: 24px;
 }
 
-/* 🔥 CARD BASE */
-.card {
-    background: white;
-    padding: 18px;
+/* 🔥 CARD */
 
-    border-radius: 16px;
+.lista_card_produto_unico {
+    position: relative;
 
-    border-left: 6px solid #007bff;
+    overflow: hidden;
 
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+    border-radius: 28px;
 
-    transition: all 0.2s ease;
+    padding: 26px;
+
+    background:
+        linear-gradient(180deg,
+            #ffffff 0%,
+            #f8fafc 95%);
+
+    border: 1px solid #e5edf5;
+
+    box-shadow:
+        0 12px 35px rgba(15, 23, 42, 0.06);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 24px;
 }
 
-.card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+.lista_card_produto_unico::after {
+    content: "";
+
+    position: absolute;
+
+    top: -30px;
+    right: -30px;
+
+    width: 160px;
+    height: 160px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(circle,
+            rgba(255, 255, 255, 0.6) 0%,
+            transparent 70%);
+
+    pointer-events: none;
 }
 
-/* 🔥 PRODUTO */
-.card h3 {
-    font-size: 1.3rem;
-    margin-bottom: 6px;
-    color: #000;
+.lista_card_produto_unico:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 22px 45px rgba(15, 23, 42, 0.1);
 }
 
-/* 🔥 LOCAL */
-.card p:first-of-type {
-    font-weight: 600;
-    color: #007bff;
-    margin-bottom: 6px;
+/* 🔥 STATUS */
+
+.lista_status_topo_unico {
+    display: flex;
+    justify-content: flex-start;
 }
 
-/* 🔥 DADOS */
-.card p {
-    font-size: 0.95rem;
-    margin: 2px 0;
-}
+.lista_badge_status_unico {
+    display: inline-flex;
 
-/* 🔥 DATA */
-.data-detalhe {
-    font-size: 0.8rem;
-    color: #888;
-    margin-top: -2px;
-}
+    align-items: center;
+    justify-content: center;
 
-/* ========================= */
-/* 🔥 CARD ATIVO */
-/* ========================= */
+    padding: 7px 16px;
 
-.card:not(.retirado) {
-    border-left: 6px solid #28a745;
-}
+    border-radius: 999px;
 
-/* badge ativo */
-.card:not(.retirado)::before {
-    content: "ATIVO";
-    display: inline-block;
-    margin-bottom: 8px;
+    font-size: 0.72rem;
+    font-weight: 900;
 
-    font-size: 0.7rem;
-    font-weight: bold;
+    letter-spacing: 0.8px;
 
-    padding: 3px 8px;
-    border-radius: 6px;
-
-    background: #28a745;
     color: white;
 }
 
-/* ========================= */
-/* 🔥 CARD RETIRADO */
-/* ========================= */
+.lista_badge_ativo_unico {
+    background:
+        linear-gradient(135deg,
+            #22c55e,
+            #15803d);
 
-.card.retirado {
-    background: #f5f5f5;
-    border-left: 6px solid #999;
-    opacity: 0.8;
+    box-shadow:
+        0 8px 20px rgba(34, 197, 94, 0.3);
 }
 
-/* badge retirado */
-.card.retirado::before {
-    content: "RETIRADO";
-    display: inline-block;
-    margin-bottom: 8px;
+.lista_badge_retirado_unico {
+    background:
+        linear-gradient(135deg,
+            #f97316,
+            #c2410c);
 
-    font-size: 0.7rem;
-    font-weight: bold;
-
-    padding: 3px 8px;
-    border-radius: 6px;
-
-    background: #999;
-    color: white;
+    box-shadow:
+        0 8px 20px rgba(249, 115, 22, 0.3);
 }
 
-/* ========================= */
-/* 🔥 BOTÃO */
-/* ========================= */
+/* 🔥 CABEÇALHO */
 
-.btn-retirar {
-    margin-top: 14px;
-    padding: 12px;
+.lista_cabecalho_card_unico h3 {
+    font-size: 1.9rem;
 
-    width: 100%;
+    font-weight: 900;
 
-    border: none;
+    letter-spacing: -1px;
+
+    color: #0f172a;
+
+    margin: 0 0 12px;
+}
+
+.lista_nome_galpao_unico {
+    display: inline-flex;
+
+    align-items: center;
+
+    background:
+        rgba(37, 99, 235, 0.08);
+
+    color: #2563eb;
+
+    font-weight: 700;
+
+    padding: 8px 14px;
+
     border-radius: 12px;
 
-    background: linear-gradient(135deg, #dc3545, #a71d2a);
+    font-size: 0.95rem;
+}
+
+/* 🔥 GRID */
+
+.lista_grid_info_unico {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(180px, 1fr));
+
+    gap: 16px;
+}
+
+.lista_box_info_unico {
+    background:
+        linear-gradient(180deg,
+            #ffffff,
+            #f8fafc);
+
+    border: 1px solid #e5edf5;
+
+    border-radius: 20px;
+
+    padding: 16px;
+
+    transition: 0.2s ease;
+}
+
+.lista_box_info_unico:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 22px rgba(15, 23, 42, 0.06);
+}
+
+.lista_box_info_unico span {
+    display: block;
+
+    font-size: 0.82rem;
+
+    color: #64748b;
+
+    margin-bottom: 8px;
+}
+
+.lista_box_info_unico strong {
+    display: block;
+
+    font-size: 1rem;
+
+    color: #0f172a;
+
+    font-weight: 800;
+}
+
+/* 🔥 DATAS */
+
+.lista_datas_area_unica {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 16px;
+}
+
+.lista_box_data_unico {
+    flex: 1;
+
+    min-width: 250px;
+
+    background:
+        linear-gradient(180deg,
+            #ffffff,
+            #f8fafc);
+
+    border: 1px solid #e5edf5;
+
+    border-radius: 22px;
+
+    padding: 18px;
+}
+
+.lista_box_data_unico span {
+    display: block;
+
+    font-size: 0.82rem;
+
+    color: #64748b;
+
+    margin-bottom: 10px;
+}
+
+.lista_box_data_unico strong {
+    display: block;
+
+    font-size: 1.02rem;
+
+    color: #0f172a;
+
+    margin-bottom: 7px;
+
+    font-weight: 800;
+}
+
+.lista_box_data_unico p {
+    margin: 0;
+
+    color: #94a3b8;
+
+    font-size: 0.86rem;
+}
+
+.lista_box_saida_unico {
+    background:
+        linear-gradient(180deg,
+            #fff7ed,
+            #ffedd5);
+
+    border-color: #fed7aa;
+}
+
+/* 🔥 BOTÃO */
+
+.lista_btn_retirar_unico {
+    border: none;
+
+    border-radius: 18px;
+
+    padding: 16px;
+
+    background:
+        linear-gradient(135deg,
+            #ef4444,
+            #b91c1c);
+
     color: white;
 
-    font-weight: 600;
+    font-size: 1rem;
+    font-weight: 800;
 
     cursor: pointer;
-    transition: 0.2s;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
 }
 
-.btn-retirar:hover {
+.lista_btn_retirar_unico:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(220, 53, 69, 0.35);
+
+    box-shadow:
+        0 14px 28px rgba(239, 68, 68, 0.3);
 }
 
-/* 🔥 LISTA VAZIA */
-.lista-box>p {
+.lista_btn_retirar_unico:active {
+    transform: scale(0.98);
+}
+
+/* 🔥 VAZIO */
+
+.lista_vazia_unica {
+    background: white;
+
+    border-radius: 24px;
+
+    padding: 40px 20px;
+
     text-align: center;
-    color: #aaa;
-    margin-top: 30px;
+
+    border: 1px dashed #dbe4ee;
 }
 
-/* ========================= */
-/* 🔥 TABLET (até 900px) */
-/* ========================= */
+.lista_vazia_unica h3 {
+    margin-bottom: 10px;
 
-@media (max-width: 900px) {
+    color: #0f172a;
 
-    .lista-container {
-        padding: 15px;
+    font-size: 1.4rem;
+}
+
+.lista_vazia_unica p {
+    color: #64748b;
+}
+
+/* 🔥 MOBILE */
+
+@media (max-width: 700px) {
+
+    .lista_container_principal_unica {
+        padding: 24px 14px 50px;
     }
 
-    .lista-container h2 {
-        font-size: 1.7rem;
+    .lista_titulo_principal_unico {
+        font-size: 2rem;
     }
 
-    .card {
-        padding: 16px;
-    }
-
-    .card h3 {
-        font-size: 1.2rem;
-    }
-
-    .card p {
+    .lista_subtitulo_principal_unico {
         font-size: 0.92rem;
     }
 
+    .lista_card_produto_unico {
+        padding: 18px;
+    }
+
+    .lista_cabecalho_card_unico h3 {
+        font-size: 1.4rem;
+    }
+
+    .lista_grid_info_unico {
+        grid-template-columns: 1fr;
+    }
+
+    .lista_datas_area_unica {
+        flex-direction: column;
+    }
+
+    .lista_box_data_unico {
+        min-width: 95%;
+    }
+
+    .lista_btn_retirar_unico {
+        padding: 15px;
+    }
 }
 
+/* 🔥 MOBILE PEQUENO */
 
-/* ========================= */
-/* 🔥 MOBILE (até 600px) */
-/* ========================= */
+@media (max-width: 430px) {
 
-@media (max-width: 600px) {
-
-    .lista-container {
-        padding: 12px;
+    .lista_titulo_principal_unico {
+        font-size: 1.7rem;
     }
 
-    .lista-container h2 {
-        font-size: 1.5rem;
+    .lista_input_busca_unico {
+        padding: 15px 16px;
+
+        border-radius: 18px;
     }
 
-    .lista-container input {
-        padding: 12px;
-        font-size: 0.95rem;
+    .lista_card_produto_unico {
+        border-radius: 22px;
     }
 
-    .lista-box {
-        gap: 14px;
+    .lista_cabecalho_card_unico h3 {
+        font-size: 1.2rem;
     }
 
-    .card {
-        padding: 14px;
-        border-radius: 14px;
+    .lista_nome_galpao_unico {
+        font-size: 0.82rem;
     }
 
-    .card h3 {
-        font-size: 1.1rem;
+    .lista_box_info_unico strong {
+        font-size: 0.92rem;
     }
 
-    .card p {
-        font-size: 0.9rem;
+    .lista_box_data_unico strong {
+        font-size: 0.94rem;
     }
-
-    .data-detalhe {
-        font-size: 0.75rem;
-    }
-
-    .btn-retirar {
-        padding: 11px;
-        font-size: 0.9rem;
-    }
-
 }
 
+/* 🔥 EFEITO DE FUNDO */
 
-/* ========================= */
-/* 🔥 MOBILE PEQUENO (até 400px) */
-/* ========================= */
+.lista_container_principal_unica::before {
+    content: "";
 
-@media (max-width: 400px) {
+    position: fixed;
 
-    .lista-container h2 {
-        font-size: 1.3rem;
+    top: -200px;
+    left: -200px;
+
+    width: 500px;
+    height: 500px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(circle,
+            rgba(59, 130, 246, 0.08) 0%,
+            transparent 70%);
+
+    z-index: -2;
+}
+
+.lista_container_principal_unica::after {
+    content: "";
+
+    position: fixed;
+
+    bottom: -200px;
+    right: -200px;
+
+    width: 500px;
+    height: 500px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(circle,
+            rgba(34, 197, 94, 0.08) 0%,
+            transparent 70%);
+
+    z-index: -2;
+}
+
+/* 🔥 ANIMAÇÃO SUAVE */
+
+.lista_card_produto_unico {
+    animation:
+        listaAnimacaoEntradaUnica 0.35s ease;
+}
+
+@keyframes listaAnimacaoEntradaUnica {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(12px) scale(0.98);
     }
 
-    .card {
-        padding: 12px;
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0) scale(1);
+    }
+}
+
+/* 🔥 LINHA SUPERIOR */
+
+.lista_card_produto_unico::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 95%;
+    height: 5px;
+
+    background:
+        linear-gradient(90deg,
+            #3b82f6,
+            #06b6d4,
+            #22c55e);
+}
+
+/* 🔥 STATUS MAIS MODERNO */
+
+.lista_badge_status_unico {
+    position: relative;
+
+    overflow: hidden;
+}
+
+.lista_badge_status_unico::after {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -40px;
+
+    width: 30px;
+    height: 95%;
+
+    background:
+        rgba(255, 255, 255, 0.35);
+
+    transform: skewX(-20deg);
+
+    animation:
+        listaBrilhoStatusUnico 2.5s infinite;
+}
+
+@keyframes listaBrilhoStatusUnico {
+
+    0% {
+        left: -40px;
     }
 
-    .card h3 {
-        font-size: 1rem;
+    95% {
+        left: 140%;
+    }
+}
+
+/* 🔥 CARD MAIS VIVO */
+
+.lista_card_ativo_unico {
+    border-left:
+        6px solid #22c55e;
+}
+
+.lista_card_retirado_unico {
+    border-left:
+        6px solid #f97316;
+}
+
+/* 🔥 HOVER NOS BLOCOS */
+
+.lista_box_info_unico {
+    position: relative;
+
+    overflow: hidden;
+}
+
+.lista_box_info_unico::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(135deg,
+            rgba(59, 130, 246, 0.04),
+            transparent);
+
+    opacity: 0;
+
+    transition: 0.25s ease;
+}
+
+.lista_box_info_unico:hover::after {
+    opacity: 1;
+}
+
+/* 🔥 ÍCONE VISUAL */
+
+.lista_box_info_unico strong {
+    position: relative;
+
+    padding-left: 14px;
+}
+
+.lista_box_info_unico strong::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+
+    background: #3b82f6;
+}
+
+/* 🔥 DATAS MAIS MODERNAS */
+
+.lista_box_data_unico {
+    position: relative;
+
+    overflow: hidden;
+}
+
+.lista_box_data_unico::after {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    right: 0;
+
+    width: 80px;
+    height: 80px;
+
+    background:
+        radial-gradient(circle,
+            rgba(255, 255, 255, 0.4),
+            transparent 70%);
+}
+
+/* 🔥 EFEITO BOTÃO */
+
+.lista_btn_retirar_unico {
+    position: relative;
+
+    overflow: hidden;
+}
+
+.lista_btn_retirar_unico::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -120px;
+
+    width: 70px;
+    height: 95%;
+
+    background:
+        rgba(255, 255, 255, 0.25);
+
+    transform: skewX(-25deg);
+
+    transition: 0.5s ease;
+}
+
+.lista_btn_retirar_unico:hover::before {
+    left: 140%;
+}
+
+/* 🔥 INPUT MAIS PREMIUM */
+
+.lista_input_busca_unico {
+    background:
+        linear-gradient(180deg,
+            #ffffff,
+            #f8fafc);
+
+    font-weight: 600;
+}
+
+.lista_input_busca_unico:hover {
+    border-color: #bfdbfe;
+}
+
+/* 🔥 SOMBRA MAIS PROFUNDA */
+
+.lista_card_produto_unico:hover {
+    box-shadow:
+        0 30px 60px rgba(15, 23, 42, 0.14),
+        0 10px 20px rgba(15, 23, 42, 0.08);
+}
+
+/* 🔥 TEXTOS MAIS BONITOS */
+
+.lista_box_info_unico span,
+.lista_box_data_unico span {
+    text-transform: uppercase;
+
+    letter-spacing: 0.6px;
+
+    font-weight: 700;
+}
+
+/* 🔥 SUBTÍTULO */
+
+.lista_subtitulo_principal_unico {
+    position: relative;
+
+    padding-left: 18px;
+}
+
+.lista_subtitulo_principal_unico::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 8px;
+
+    width: 8px;
+    height: 8px;
+
+    border-radius: 50%;
+
+    background: #3b82f6;
+}
+
+/* 🔥 ROLAGEM MAIS SUAVE */
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* 🔥 SELEÇÃO */
+
+::selection {
+    background: rgba(59, 130, 246, 0.25);
+
+    color: #0f172a;
+}
+
+/* 🔥 RESPONSIVO EXTRA */
+
+@media (max-width: 550px) {
+
+    .lista_card_produto_unico {
+        gap: 18px;
     }
 
-    .card p {
-        font-size: 0.85rem;
+    .lista_badge_status_unico {
+        width: 95%;
+
+        justify-content: center;
     }
 
-    .btn-retirar {
-        padding: 10px;
-        font-size: 0.85rem;
+    .lista_status_topo_unico {
+        width: 95%;
     }
 
+    .lista_btn_retirar_unico {
+        font-size: 0.92rem;
+    }
 }

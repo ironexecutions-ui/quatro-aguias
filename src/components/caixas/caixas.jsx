@@ -75,43 +75,113 @@ export default function Caixas() {
     }
 
     // 🔥 LOGADO
+    // 🔥 LOGADO
     return (
         <div className="caixas-container">
-            <img src="../../qat.avif" alt="" />
 
-            <p className="caixas-sucesso">
-                <strong>
-                    {usuario.nome?.charAt(0).toUpperCase() + usuario.nome?.slice(1).toLowerCase()}
-                </strong>
-            </p>
+            {/* 🔥 FUNDO DECORATIVO */}
+            <div className="caixas-fundo-bolha caixas-fundo-bolha-1"></div>
+            <div className="caixas-fundo-bolha caixas-fundo-bolha-2"></div>
 
-            <button onClick={sair} className="caixas-botao-sair">
-                Sair
-            </button>
+            {/* 🔥 HEADER */}
+            <div className="caixas-header-unico">
 
-            {/* 🔥 BOTÕES STICKY */}
+                <div className="caixas-logo-area-unica">
+
+                    <img
+                        src="../../qat.avif"
+                        alt="Logo"
+                        className="caixas-logo-unica"
+                    />
+
+                </div>
+
+                <div className="caixas-usuario-area-unica">
+
+                    <div className="caixas-status-online-unico">
+                        Online
+                    </div>
+
+                    <h2 className="caixas-nome-unico">
+                        {
+                            usuario.nome?.charAt(0).toUpperCase() +
+                            usuario.nome?.slice(1).toLowerCase()
+                        }
+                    </h2>
+
+                    <p className="caixas-subtexto-unico">
+                        Sistema de gerenciamento de galpões
+                    </p>
+
+                </div>
+
+                <button
+                    onClick={sair}
+                    className="caixas-botao-sair"
+                >
+                    Sair
+                </button>
+
+            </div>
+
+            {/* 🔥 MENU */}
             <div className="menu-sticky">
 
                 <button
-                    className={tela === "lista" ? "ativo" : ""}
+                    className={`
+                    menu-btn-unico
+                    ${tela === "lista"
+                            ? "ativo"
+                            : ""
+                        }
+                `}
                     onClick={() => setTela("lista")}
                 >
-                    Lista
+
+                    <span className="menu-mini-texto-unico">
+                        Visualização
+                    </span>
+
+                    <strong>
+                        Lista
+                    </strong>
+
                 </button>
 
                 <button
-                    className={tela === "posicionar" ? "ativo" : ""}
+                    className={`
+                    menu-btn-unico
+                    ${tela === "posicionar"
+                            ? "ativo"
+                            : ""
+                        }
+                `}
                     onClick={() => setTela("posicionar")}
                 >
-                    Posicionar
+
+                    <span className="menu-mini-texto-unico">
+                        Controle
+                    </span>
+
+                    <strong>
+                        Posicionar
+                    </strong>
+
                 </button>
 
             </div>
 
             {/* 🔥 CONTEÚDO */}
-            <div className="conteudo">
-                {tela === "lista" && <Lista />}
-                {tela === "posicionar" && <Posicionar />}
+            <div className="conteudo caixas-conteudo-unico">
+
+                <div className="caixas-conteudo-card-unico">
+
+                    {tela === "lista" && <Lista />}
+
+                    {tela === "posicionar" && <Posicionar />}
+
+                </div>
+
             </div>
 
         </div>

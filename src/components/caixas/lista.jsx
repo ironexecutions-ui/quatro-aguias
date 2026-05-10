@@ -3,7 +3,7 @@ import { API_URL } from "../../config";
 import "./lista.css";
 
 export default function Lista() {
-
+    const [carregando, setCarregando] = useState(true);
     const [listaProdutos, setListaProdutos] = useState([]);
 
     const [dados, setDados] = useState([]);
@@ -72,6 +72,8 @@ export default function Lista() {
 
         try {
 
+            setCarregando(true);
+
             const res = await fetch(
                 `${API_URL}/galpao/listar`
             );
@@ -83,9 +85,12 @@ export default function Lista() {
         } catch {
 
             alert("Erro ao carregar");
+
+        } finally {
+
+            setCarregando(false);
         }
     };
-
     useEffect(() => {
 
         carregar();
@@ -118,12 +123,51 @@ export default function Lista() {
             alert("Erro ao conectar");
         }
     };
+    useEffect(() => {
 
+        if (carregando) {
+
+            document.body.style.overflow = "hidden";
+
+        } else {
+
+            document.body.style.overflow = "auto";
+        }
+
+        return () => {
+
+            document.body.style.overflow = "auto";
+        };
+
+    }, [carregando]);
     // 🔥 FILTRO
     const filtrados = dados.filter(d =>
         d.produto?.toString().includes(filtro)
     );
+    if (carregando) {
 
+        return (
+
+            <div className="lista_loading_tela_unica">
+
+                <div className="lista_loading_box_unica">
+
+                    <div className="lista_loading_spinner_unica"></div>
+
+                    <h2>
+                        Carregando Produtos
+                    </h2>
+
+                    <p>
+                        Aguarde um momento...
+                    </p>
+
+                </div>
+
+            </div>
+
+        );
+    }
     return (
 
         <div className="lista_container_principal_unica">

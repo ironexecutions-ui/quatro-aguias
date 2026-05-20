@@ -570,7 +570,7 @@ export default function Posicionar() {
                                         >
 
                                             <span className="btn-mini-label-unico">
-                                                Posição
+                                                Palete
                                             </span>
 
                                             <strong>

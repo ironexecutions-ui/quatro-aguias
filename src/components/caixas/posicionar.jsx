@@ -21,7 +21,7 @@ export default function Posicionar() {
     const [produto, setProduto] = useState("");
 
     const [ocupados, setOcupados] = useState([]);
-
+    const [palete, setPalete] = useState("");
     const [msg, setMsg] = useState("");
     const funcionario = JSON.parse(
         localStorage.getItem("funcionario")
@@ -153,6 +153,7 @@ export default function Posicionar() {
                 body = {
                     andar,
                     plataforma,
+                    palete,
                     produto,
                     id_funcionario: funcionario?.id
                 };
@@ -352,10 +353,11 @@ export default function Posicionar() {
                                         : ""
                                 }
                                 onClick={() => {
-
                                     setAndar(String(a));
 
                                     setPlataforma("");
+
+                                    setPalete("");
                                 }}
                             >
                                 <span className="btn-mini-label-unico">
@@ -385,32 +387,22 @@ export default function Posicionar() {
                                     : [1, 2]
                                 ).map(p => {
 
-                                    const ocupado = ocupados.some(o =>
-                                        o.andar === andar &&
-                                        o.plataforma === String(p)
-                                    );
-
                                     return (
 
                                         <button
                                             key={p}
-                                            disabled={ocupado}
-                                            className={`
-                                            ${plataforma === String(p)
+                                            className={
+                                                plataforma === String(p)
                                                     ? "ativo"
                                                     : ""
-                                                }
-
-                                            ${ocupado
-                                                    ? "bloqueado"
-                                                    : ""
-                                                }
-                                        `}
+                                            }
                                             onClick={() => {
 
                                                 setPlataforma(
                                                     String(p)
                                                 );
+
+                                                setPalete("");
                                             }}
                                         >
 
@@ -422,18 +414,71 @@ export default function Posicionar() {
                                                 {p}
                                             </strong>
 
-                                            {ocupado && (
-                                                <small>
-                                                    Ocupado
-                                                </small>
-                                            )}
-
                                         </button>
 
                                     );
                                 })}
 
                             </div>
+
+                            {plataforma && (
+
+                                <>
+                                    <div className="posicionar-titulo-secao-unica">
+                                        Selecionar Palete
+                                    </div>
+
+                                    <div className="grupo-botoes">
+
+                                        {[1, 2, 3, 4, 5, 6].map(p => {
+
+                                            const ocupado = ocupados.some(o =>
+                                                o.andar === andar &&
+                                                o.plataforma === plataforma &&
+                                                o.palete === String(p)
+                                            );
+
+                                            return (
+
+                                                <button
+                                                    key={p}
+                                                    disabled={ocupado}
+                                                    className={`
+                                    ${palete === String(p)
+                                                            ? "ativo"
+                                                            : ""
+                                                        }
+
+                                    ${ocupado
+                                                            ? "bloqueado"
+                                                            : ""
+                                                        }
+                                `}
+                                                    onClick={() => {
+
+                                                        setPalete(
+                                                            String(p)
+                                                        );
+                                                    }}
+                                                >
+
+                                                    <span className="btn-mini-label-unico">
+                                                        Palete
+                                                    </span>
+
+                                                    <strong>
+                                                        {p}
+                                                    </strong>
+
+                                                </button>
+
+                                            );
+                                        })}
+
+                                    </div>
+                                </>
+                            )}
+
                         </>
                     )}
 
@@ -563,8 +608,11 @@ export default function Posicionar() {
 
                     <div className="grupo-botoes">
 
-                        {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(p => {
-
+                        {(
+                            galpao === "3"
+                                ? [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+                                : [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+                        ).map(p => {
                             const ocupado = ocupados.some(o =>
                                 o.posicao === String(p)
                             );
@@ -594,7 +642,7 @@ export default function Posicionar() {
                                 >
 
                                     <span className="btn-mini-label-unico">
-                                        Posição
+                                        Palete
                                     </span>
 
                                     <strong>
@@ -620,8 +668,7 @@ export default function Posicionar() {
 
             {/* 🔥 PRODUTO */}
 
-            {(plataforma || posicao) && (
-
+            {((galpao === "1" && palete) || posicao) && (
                 <div className="posicionar-produto-area-unica">
 
                     <div className="posicionar-titulo-secao-unica">
@@ -758,6 +805,7 @@ export default function Posicionar() {
                                         bodyRealocar.andar = andar;
 
                                         bodyRealocar.plataforma = plataforma;
+                                        bodyRealocar.palete = palete;
                                     }
 
                                     if (galpao === "2") {

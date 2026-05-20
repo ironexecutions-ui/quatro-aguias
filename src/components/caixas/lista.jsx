@@ -9,7 +9,7 @@ export default function Lista() {
     const [dados, setDados] = useState([]);
 
     const [filtro, setFiltro] = useState("");
-
+    const [limite, setLimite] = useState(10);
     // 🔥 CALCULAR DIAS
     const diasPassados = (data) => {
 
@@ -140,10 +140,11 @@ export default function Lista() {
         };
 
     }, [carregando]);
-    // 🔥 FILTRO
-    const filtrados = dados.filter(d =>
-        d.produto?.toString().includes(filtro)
-    );
+    const filtrados = dados
+        .filter(d =>
+            d.produto?.toString().includes(filtro)
+        )
+        .slice(0, limite);
     if (carregando) {
 
         return (
@@ -194,9 +195,12 @@ export default function Lista() {
                     list="produtos-lista"
                     placeholder="Buscar por nota fiscal..."
                     value={filtro}
-                    onChange={(e) =>
-                        setFiltro(e.target.value)
-                    }
+                    onChange={(e) => {
+
+                        setFiltro(e.target.value);
+
+                        setLimite(10);
+                    }}
                     className="lista_input_busca_unico"
                 />
 
@@ -323,7 +327,19 @@ export default function Lista() {
 
                                     </div>
                                 )}
+                                {item.palete && (
+                                    <div className="lista_box_info_unico">
 
+                                        <span>
+                                            Palete
+                                        </span>
+
+                                        <strong>
+                                            {item.palete}
+                                        </strong>
+
+                                    </div>
+                                )}
                                 {item.area && (
                                     <div className="lista_box_info_unico">
 
@@ -342,7 +358,7 @@ export default function Lista() {
                                     <div className="lista_box_info_unico">
 
                                         <span>
-                                            Posição
+                                            Palete
                                         </span>
 
                                         <strong>
@@ -418,7 +434,36 @@ export default function Lista() {
 
                         </div>
                     );
-                })}
+                })}{dados.filter(d =>
+                    d.produto?.toString().includes(filtro)
+                ).length > limite && (
+
+                        <div className="lista_ver_mais_area_unica">
+
+                            <button
+                                className="lista_btn_ver_mais_unico"
+                                onClick={() => {
+
+                                    const scrollAtual = window.scrollY;
+
+                                    setLimite(prev => prev + 10);
+
+                                    setTimeout(() => {
+
+                                        window.scrollTo({
+                                            top: scrollAtual,
+                                            behavior: "auto"
+                                        });
+
+                                    }, 0);
+                                }}
+                            >
+                                Ver mais 10
+                            </button>
+
+                        </div>
+
+                    )}
 
                 {/* 🔥 VAZIO */}
                 {filtrados.length === 0 && (

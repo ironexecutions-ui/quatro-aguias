@@ -912,3 +912,73 @@ html {
 
     line-height: 1.6;
 }
+
+.lista_ver_mais_area_unica {
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: 25px;
+}
+
+.lista_btn_ver_mais_unico {
+    border: none;
+
+    padding: 14px 28px;
+
+    border-radius: 16px;
+
+    cursor: pointer;
+
+    font-size: 15px;
+    font-weight: 700;
+
+    color: white;
+
+    background:
+        linear-gradient(135deg,
+            #2f80ed,
+            #1c5dc9);
+
+    box-shadow:
+        0 10px 25px rgba(47, 128, 237, 0.35);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        opacity 0.2s ease;
+}
+
+.lista_btn_ver_mais_unico:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 14px 30px rgba(47, 128, 237, 0.45);
+}
+
+.lista_btn_ver_mais_unico:active {
+    transform: scale(0.98);
+}
+
+.lista_btn_ver_mais_unico:disabled {
+    opacity: 0.6;
+
+    cursor: not-allowed;
+
+    transform: none;
+}
+
+@media (max-width: 700px) {
+
+    .lista_btn_ver_mais_unico {
+        width: 100%;
+
+        max-width: 280px;
+
+        padding: 15px;
+
+        font-size: 14px;
+    }
+}

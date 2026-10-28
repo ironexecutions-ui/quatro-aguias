@@ -5,7 +5,7 @@ export default function CotacaoCTA() {
 
     function abrirWhatsApp() {
         window.open(
-            "https://wa.me/5511957934372?text=Olá,%20gostaria%20de%20falar%20com%20um%20especialista%20para%20cotação.",
+            "https://wa.me/5511958784992?text=Olá,%20gostaria%20de%20falar%20com%20um%20especialista%20para%20cotação.",
             "_blank"
         );
     }

@@ -5,7 +5,7 @@ export default function Hero() {
 
     function abrirWhatsApp() {
         window.open(
-            "https://wa.me/5511957934372?text=Olá,%20gostaria%20de%20solicitar%20uma%20cotação.",
+            "https://wa.me/5511958784992?text=Olá,%20gostaria%20de%20solicitar%20uma%20cotação.",
             "_blank"
         );
     }
